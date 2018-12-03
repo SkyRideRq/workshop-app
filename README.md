@@ -1,3 +1,21 @@
+## Basics
+
+!!WORK IN PROGRESS!!
+
+Small React app created to simplify data management and archivisation
+of repaired machines and equipment.
+
+Created using React Table: 
+https://react-table.js.org
+
+Nothing special to see here :)
+
+###ToDo:
+
+-fix subobject placement in json
+-rethink data-add system
+-ship it to electron(https://electronjs.org/) to make desktop app
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

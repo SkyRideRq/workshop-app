@@ -22,13 +22,12 @@ class App extends Component {
       name: "",
       model: "",
       serialNumber: "",
-      description:"",
-      parts:"",
-      cost:"",
-      inputDate:"",
-      outputDate:"",
       service:[{
-       
+        description:"",
+        parts:"",
+        cost:"",
+        inputDate:"",
+        outputDate:""
       }]
       
     };
@@ -46,7 +45,9 @@ class App extends Component {
   
   handleChange = (event) => {
     event.preventDefault()
-    
+    let data
+      data= {...this.state.service}
+      console.log('data ',data)
     if (event.target.name === "name")
       this.setState({ name: event.target.value });
     if (event.target.name === "model")
@@ -56,34 +57,34 @@ class App extends Component {
     if (event.target.name === "description")
         
       this.setState({
-        
+        service:[{ 
           description: event.target.value
-        
+        }] 
       });
     if (event.target.name === "parts")
       this.setState({ 
-        
+        service:[{
           parts: event.target.value 
-        
+        }]
       });
     if (event.target.name === "cost")
       this.setState({ 
-        
+        service:[{
           cost: event.target.value
-        
+        }]
       });
     if (event.target.name === "inputDate")
       this.setState({ 
-        
+        service:[{
           inputDate: event.target.value
-        
+        }]
       });
     if (event.target.name === "outputDate")
       
       this.setState({ 
-        
+        service:[{
           outputDate: event.target.value
-        
+        }]
       });
   };
 
@@ -103,13 +104,12 @@ class App extends Component {
       name: "",
       model: "",
       serialNumber: "",
-      description:"",
-      parts:"",
-      cost:"",
-      inputDate:"",
-      outputDate:"", 
       service:[{
-        
+        description:"",
+        parts:"",
+        cost:"",
+        inputDate:"",
+        outputDate:"" 
       }]
         
     });
@@ -142,28 +142,10 @@ class App extends Component {
   //     />
   //   );
   // };
-  handleSubmitSubComp = (e) => {
-    e.preventDefault();
-    const fields = Array.prototype.slice.call(e.target)
-      .filter(el => el.name)
-      .reduce((form, el) => ({
-        ...form,
-        [el.name]: el.value,
-      }), {});
-    console.log(fields)
-    const dataToSend =JSON.stringify(fields)
-    fetch('http://localhost:3000/user/1/service', {
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
-      },
-      method: 'POST',
-      body: dataToSend
-    })
-  }
+ 
   render() {
     const { data } = this.state;
-    
+    console.log(this.state.service)
     return (
       <div className="App">
         <div className="App-intro">
@@ -207,18 +189,18 @@ class App extends Component {
             collapseOnPageChange= {false}
             collapseOnSortingChange= {false}
             filterable
-            SubComponent={(row) => {
-              console.log(row )  
+            SubComponent={(row, i) => {
+              console.log(row ,i)  
               return (
                 <div style={{margin:"20px"}}>
-                  <form onSubmit={this.handleSubmitSubComp}>
+                  <form onSubmit={this.handleSubmit}>
                     <h3>Dodaj nową naprawę</h3>
                     <label>
                       Opis Usterki:
                       <textarea
                         type="text"
                         name="description"
-                        value={this.state.description}
+                        value={this.state.service.map(e => e.description)}
                         onChange={this.handleChange}
                       />
                     </label>
@@ -228,7 +210,7 @@ class App extends Component {
                       <textarea
                         type="text"
                         name="parts"
-                        value={this.state.parts}
+                        value={this.state.service.map(e => e.parts)}
                         onChange={this.handleChange}
                       />
                     </label>
@@ -238,7 +220,7 @@ class App extends Component {
                       <input
                         type="number"
                         name="cost"
-                        value={this.state.cost}
+                        value={this.state.service.map(e => e.cost)}
                         onChange={this.handleChange}
                       />
                     </label>
@@ -248,7 +230,7 @@ class App extends Component {
                       <input
                         type="date"
                         name="inputDate"
-                        value={this.state.inputDate}
+                        value={this.state.service.map(e => e.inputDate)}
                         onChange={this.handleChange}
                       />
                     </label>
@@ -258,7 +240,7 @@ class App extends Component {
                       <input
                         type="date"
                         name="outputDate"
-                        value={this.state.outputDate}
+                        value={this.state.service.map(e => e.outputDate)}
                         onChange={this.handleChange}
                       />
                     </label>

@@ -5,43 +5,40 @@
       "name": "Zygmunt Stary",
       "model": "MS001",
       "serialNumber": "000001",
-      "description": "nie chodzi",
-      "parts": "moduł zapłonowy, gaźnik, uszczelniacze",
-      "cost": "356",
-      "inputDate": "2018-11-13",
-      "outputDate": "2018-11-15"
+      "service": [
+        {
+          "id": "1",
+          "description": "nie chodzi",
+          "parts": "moduł zapłonowy, gaźnik, uszczelniacze",
+          "cost": "356",
+          "inputDate": "2018-11-13",
+          "outputDate": "2018-11-15"
+        }
+      ]
     },
     {
-      "name": "ujjuj",
-      "model": "",
-      "serialNumber": "",
-      "description": "",
-      "parts": "",  
-      "cost": "",
-      "inputDate": "",
-      "outputDate": ""
-    },
-    {
-      "name": "wsad",
-      "model": "asda",
-      "serialNumber": "sada",
       "description": "",
       "parts": "",
       "cost": "",
       "inputDate": "",
       "outputDate": "",
-      "id": "00DruEg"
+      "id": "NRlK~~w"
     },
     {
-      "name": "dwsad",
-      "model": "sadas",
-      "serialNumber": "sadasd",
-      "description": "sada",
-      "parts": "",
+      "description": "",
+      "parts": "v",
       "cost": "",
       "inputDate": "",
       "outputDate": "",
-      "id": "BDMK75p"
+      "id": "d9uhUmG"
+    },
+    {
+      "description": "tttt",
+      "parts": "tttt",
+      "cost": "6",
+      "inputDate": "",
+      "outputDate": "",
+      "id": "Bowg39m"
     }
   ]
 }
