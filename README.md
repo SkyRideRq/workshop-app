@@ -5,8 +5,10 @@
 Small React app created to simplify data management and archivisation
 of repaired machines and equipment.
 
-Created using React Table: 
-https://react-table.js.org
+~~Created using React Table: 
+https://react-table.js.org~~
+
+CSS an styling thanks to https://materializecss.com
 
 Nothing special to see here :)
 
