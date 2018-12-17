@@ -10,6 +10,8 @@ https://react-table.js.org~~
 
 CSS an styling thanks to https://materializecss.com
 
+json-server needed to use db
+
 Nothing special to see here :)
 
 ### ToDo:
