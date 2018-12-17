@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 
 class Subtable extends Component {
     state = {
-        data: null,
+        data: [],
         service:{
 
         }
@@ -17,16 +17,26 @@ class Subtable extends Component {
                 ...form,
                 [el.name]: el.value,
             }), {});
-        console.log(fields)
-        const dataToSend =JSON.stringify(fields)
-        fetch('http://localhost:3000/user/'+id+'/service', {
+        const randomID= Math.random().toString(36).substr(2, 9)
+        console.log(randomID)
+        fields.id = randomID
+        console.log('fielsd ',fields)
+        const newfields = this.state.data.service.push(fields)
+        this.setState({
+            data: newfields
+        })  
+        console.log(newfields)
+        console.log("this state data ",this.state.data)
+        const dataToSend =JSON.stringify(this.state.data)
+        fetch('http://localhost:3000/user/'+id+ '/', {
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
             },
-            method: 'POST',
+            method: 'PUT',
             body: dataToSend
-        })
+        });
+        
     }
     handleChange = (event) => {
         event.preventDefault()
@@ -49,27 +59,30 @@ class Subtable extends Component {
     };
 
 
-    componentDidMount() {
-        console.log(this.props)
+    componentWillMount() {
+        //console.log(this.props)
         let id = this.props.match.params.post_id;
         fetch("http://localhost:3000/user/"+id).then( resp => {
+            
             return resp.json();
         }).then( obj => {
             this.setState({ 
-                data: obj
+                data: obj,
+                service:obj.service
             });
         });
+        console.log(this.state.service)
     }
     
     render () {
-        console.log(this.state.data)
+        //console.log(this.state.data)
         const data = this.state.data ? (
             <div>
                 <h4 className="center">{this.state.data.name} {this.state.data.model} {this.state.data.serialNumber}</h4>
             </div>
         ) : (<h1 className="center">Wczytywanie...</h1>)
-        const datalist = this.state.data ? (
-            this.state.data.service.map(e=>{
+        const datalist = this.state.service.length ? (
+            this.state.service.map(e=>{
                 return (
                     <tr key={e.id}>
                         <td>{e.description}</td>
@@ -93,6 +106,7 @@ class Subtable extends Component {
                         name="description"
                         value={this.state.service.description}
                         onChange={this.handleChange}
+                        required
                         />
                     </label>
                     <label>
@@ -102,6 +116,7 @@ class Subtable extends Component {
                             name="parts"
                             value={this.state.service.parts}
                             onChange={this.handleChange}
+                            required
                         />
                     </label>
                     <label>
@@ -111,6 +126,7 @@ class Subtable extends Component {
                             name="cost"
                             value={this.state.service.cost}
                             onChange={this.handleChange}
+                            required
                         />
                     </label>
                     <label>
@@ -120,6 +136,7 @@ class Subtable extends Component {
                             name="inputDate"
                             value={this.state.service.inputDate}
                             onChange={this.handleChange}
+                            required
                         />
                     </label>
                     <label>
@@ -129,6 +146,7 @@ class Subtable extends Component {
                             name="outputDate"
                             value={this.state.service.outputDate}
                             onChange={this.handleChange}
+                            required
                         />
                     </label>
                     <input type="submit" value="Dodaj" />

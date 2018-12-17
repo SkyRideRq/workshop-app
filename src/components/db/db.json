@@ -13,6 +13,46 @@
           "cost": "356",
           "inputDate": "2018-11-13",
           "outputDate": "2018-11-15"
+        },
+        {
+          "description": "slabo pali",
+          "parts": "swieca linka filtr",
+          "cost": "34",
+          "inputDate": "2018-12-19",
+          "outputDate": "2018-12-20",
+          "id": "5skl18wfc"
+        },
+        {
+          "description": "malo bierze paliw",
+          "parts": "filtr paliwa",
+          "cost": "45",
+          "inputDate": "2018-12-19",
+          "outputDate": "2018-12-30",
+          "id": "b82g3ojnr"
+        },
+        {
+          "description": "kkk",
+          "parts": "ggg",
+          "cost": "333",
+          "inputDate": "2018-12-18",
+          "outputDate": "2018-12-22",
+          "id": "mm6ce2q2c"
+        },
+        {
+          "description": "kkk",
+          "parts": "kkk",
+          "cost": "3",
+          "inputDate": "2018-12-17",
+          "outputDate": "2018-12-21",
+          "id": "o1pv0q1dl"
+        },
+        {
+          "description": "sss",
+          "parts": "d",
+          "cost": "3",
+          "inputDate": "2018-12-18",
+          "outputDate": "2018-12-23",
+          "id": "g1le6z2wz"
         }
       ]
     },
@@ -21,6 +61,42 @@
       "model": "zzz",
       "serialNumber": "zzz",
       "id": "n5vVDZ_"
+    },
+    {
+      "name": "kljl",
+      "model": "dggdgdgdg",
+      "serialNumber": "gdgddggddg",
+      "id": "PYCZfS~"
+    },
+    {
+      "name": "Piotr Słowiński",
+      "model": "gfjjgfjfgfgjgfj",
+      "serialNumber": "asdasd",
+      "service": [
+        {
+          "description": "kkk",
+          "parts": "ggg",
+          "cost": "3",
+          "inputDate": "2018-12-17",
+          "outputDate": "2018-12-20",
+          "id": "e1mpjkigy"
+        }
+      ],
+      "id": "hIaPuoe"
+    },
+    {
+      "name": "s",
+      "model": "s",
+      "serialNumber": "s",
+      "service": [],
+      "id": "kzQdyzL"
+    },
+    {
+      "name": "Piotr Słowiński",
+      "model": "gfjjgfjfgfgjgfj",
+      "serialNumber": "f",
+      "service": [],
+      "id": "hszbrdrfv"
     }
   ]
 }

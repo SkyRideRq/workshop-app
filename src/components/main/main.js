@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ReactTable from "react-table";
+
 import "react-table/react-table.css";
 import { Link } from 'react-router-dom'
 class Main extends Component {
@@ -48,6 +48,11 @@ class Main extends Component {
                 [el.name]: el.value,
             }), {});
         console.log(fields)
+        fields.service= []
+        console.log(fields)
+        const randomID= Math.random().toString(36).substr(2, 9)
+        console.log(randomID)
+        fields.id = randomID
         const newData = this.state.data
         newData.push(fields)
         this.setState({ 
