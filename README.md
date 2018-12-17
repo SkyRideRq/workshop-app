@@ -14,9 +14,9 @@ Nothing special to see here :)
 
 ### ToDo:
 
-- fix subobject placement in json
-- rethink data-add system
-- ship it to electron(https://electronjs.org/) to make desktop app
+- [x] fix subobject placement in json
+- [x] rethink data-add system
+- [ ]ship it to electron(https://electronjs.org/) to make desktop app
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
