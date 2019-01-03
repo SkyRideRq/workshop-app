@@ -4,7 +4,8 @@ import React, { Component } from 'react';
 class Subtable extends Component {
     state = {
         data: [],
-        service:[]
+        service:[],
+        visibilty: 'hide'
     }
     handleSubmit = (e) => {
         e.preventDefault();
@@ -56,7 +57,17 @@ class Subtable extends Component {
             this.setState({outputDate: event.target.value});
     };
 
-
+    handleClick = () => {
+        this.state.visibilty==='hide' ? (
+            this.setState({
+                visibilty:""
+            })  
+        ) : (
+            this.setState({
+                visibilty:'hide'
+            })
+        )
+    }
     componentWillMount() {
         //console.log(this.props)
         let id = this.props.match.params.post_id;
@@ -93,9 +104,10 @@ class Subtable extends Component {
             })
             ) : (<tr className="center"><td>Brak danych</td></tr>)
         return (
-            <div className="container">
+            <div className="container center">
                 {data}
-                <form onSubmit={this.handleSubmit}>
+                <button className='btn' onClick={this.handleClick}>Dodaja nową naprawę</button>
+                <form className={this.state.visibilty} onSubmit={this.handleSubmit}>
                     <h3>Dodaj nowy wpis</h3>
                     <label>
                         Opis:

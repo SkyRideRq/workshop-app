@@ -20,7 +20,6 @@ class Main extends Component {
         this.setState({
             result: results
         })
-        
     }
 
     componentWillMount() {
@@ -55,7 +54,7 @@ class Main extends Component {
             })
             ) : (<tr className="center"><td>Brak danych</td></tr>)
         return (
-            <div className="container  flex">
+            <div className="container flex">
                 <input
                     placeholder="Szukaj..."
                     ref={input => this.search = input}
@@ -66,10 +65,10 @@ class Main extends Component {
                     <table className="highlight centered">
                         <thead>
                             <tr>
-                                <th>Link</th>
+                                <th></th>
                                 <th>Imie</th>
                                 <th>Model</th>
-                                <th>nrSeryjny</th>
+                                <th>Nr. Seryjny</th>
                             </tr>
                         </thead>
                         <tbody>

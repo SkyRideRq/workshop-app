@@ -78,11 +78,11 @@ class Editor extends Component {
     };
     render () {
         return (
-            <div className="center">
+            <div className="container center">
                 <form onSubmit={this.handleSubmit}>
                     <h3>Dodaj nowy sprzęt</h3>
                     <div className="row">
-                        <div className="input-form">
+                        <div className="input-field">
                             <input
                                 type="text"
                                 name="name"
@@ -93,7 +93,7 @@ class Editor extends Component {
                                 />
                             <label htmlFor="name">Nazwisko Imię</label>
                         </div>
-                        <div className="input-form">
+                        <div className="input-field">
                             <input
                                 type="text"
                                 name="model"
@@ -102,7 +102,7 @@ class Editor extends Component {
                             />
                             <label htmlFor="model">Model:</label>
                         </div>
-                        <div className="input-form">
+                        <div className="input-field">
                             <input
                                 type="text"
                                 name="serialNumber"

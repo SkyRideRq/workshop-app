@@ -122,6 +122,29 @@
       "serialNumber": "dfsf",
       "service": [],
       "id": "o95vuhvy3"
+    },
+    {
+      "name": "macko",
+      "model": "Gluteb",
+      "serialNumber": "sdf",
+      "service": [],
+      "id": "n4n3c6o5n"
+    },
+    {
+      "name": "Piotr Słowiński",
+      "model": "gfjjgfjfgfgjgfj",
+      "serialNumber": "asdasd",
+      "service": [
+        {
+          "description": "f",
+          "parts": "f",
+          "cost": "34",
+          "inputDate": "0434-03-31",
+          "outputDate": "0034-03-04",
+          "id": "ttmslo56z"
+        }
+      ],
+      "id": "lzdk7el4g"
     }
   ]
 }
