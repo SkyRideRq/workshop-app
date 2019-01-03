@@ -76,7 +76,16 @@
       "name": "s",
       "model": "s",
       "serialNumber": "s",
-      "service": [],
+      "service": [
+        {
+          "description": "fdfs",
+          "parts": "sdfsd",
+          "cost": "5345",
+          "inputDate": "4534-05-04",
+          "outputDate": "35345-05-04",
+          "id": "boch55a2v"
+        }
+      ],
       "id": "kzQdyzL"
     },
     {

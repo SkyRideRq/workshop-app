@@ -4,8 +4,8 @@ import React, { Component } from 'react';
 class Subtable extends Component {
     state = {
         data: [],
-        service:[],
-        visibilty: 'hide'
+        service:[]
+        
     }
     handleSubmit = (e) => {
         e.preventDefault();
@@ -57,17 +57,7 @@ class Subtable extends Component {
             this.setState({outputDate: event.target.value});
     };
 
-    handleClick = () => {
-        this.state.visibilty==='hide' ? (
-            this.setState({
-                visibilty:""
-            })  
-        ) : (
-            this.setState({
-                visibilty:'hide'
-            })
-        )
-    }
+    
     componentWillMount() {
         //console.log(this.props)
         let id = this.props.match.params.post_id;
@@ -106,61 +96,70 @@ class Subtable extends Component {
         return (
             <div className="container center">
                 {data}
-                <button className='btn' onClick={this.handleClick}>Dodaja nową naprawę</button>
-                <form className={this.state.visibilty} onSubmit={this.handleSubmit}>
-                    <h3>Dodaj nowy wpis</h3>
-                    <label>
-                        Opis:
-                        <input
-                        type="text"
-                        name="description"
-                        value={this.state.service.description}
-                        onChange={this.handleChange}
-                        required
-                        />
-                    </label>
-                    <label>
-                        Części:
-                        <input
-                            type="text"
-                            name="parts"
-                            value={this.state.service.parts}
-                            onChange={this.handleChange}
-                            required
-                        />
-                    </label>
-                    <label>
-                        Koszt:
-                        <input
-                            type="number"
-                            name="cost"
-                            value={this.state.service.cost}
-                            onChange={this.handleChange}
-                            required
-                        />
-                    </label>
-                    <label>
-                        Data przyjęcia:
-                        <input
-                            type="date"
-                            name="inputDate"
-                            value={this.state.service.inputDate}
-                            onChange={this.handleChange}
-                            required
-                        />
-                    </label>
-                    <label>
-                        Data wydania:
-                        <input
-                            type="date"
-                            name="outputDate"
-                            value={this.state.service.outputDate}
-                            onChange={this.handleChange}
-                            required
-                        />
-                    </label>
-                    <input type="submit" value="Dodaj" />
-                </form>
+                <a className='waves-effect waves-light btn modal-trigger' href="#modal1">Dodaj nową naprawę</a>
+                <div id="modal1" className="modal">
+                    <form  className="modal-content" onSubmit={this.handleSubmit}>
+                        <h6>Dodaj nowy wpis</h6>
+                        <div className="input-field">
+                            <input
+                                type="text"
+                                name="description"
+                                value={this.state.service.description}
+                                onChange={this.handleChange}
+                                required
+                            />
+                            <label htmlFor="description">Opis:</label>
+                        </div>
+                        
+                        <div className="input-field">
+                            <input
+                                type="text"
+                                name="parts"
+                                value={this.state.service.parts}
+                                onChange={this.handleChange}
+                                required
+                            />
+                            <label htmlFor="parts">Części:</label>
+                        </div>
+                        <div className="input-field">
+                            <input
+                                type="number"
+                                name="cost"
+                                value={this.state.service.cost}
+                                onChange={this.handleChange}
+                                required
+                            />
+                            <label htmlFor="cost">Koszt:</label>
+                        </div>
+                        
+                        <div className="input-field">
+                            <input
+                                type="date"
+                                name="inputDate"
+                                value={this.state.service.inputDate}
+                                onChange={this.handleChange}
+                                required
+                            />
+                            <label htmlFor="inputDate">Data przyjęcia:</label>
+                        </div>
+                        
+                        <div className="input-field">
+                            <input
+                                type="date"
+                                name="outputDate"
+                                value={this.state.service.outputDate}
+                                onChange={this.handleChange}
+                                required
+                            />
+                            <label htmlFor="outputDate">Data wydania:</label>
+                        </div>
+                        <div className="modal-footer">
+                            <input className="btn" type="submit" value="Dodaj" />
+                        </div>
+                        
+                    </form>
+                </div>
+                    
                 
                 <table className="striped highlight">
                     <thead>
