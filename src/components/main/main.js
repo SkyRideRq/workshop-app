@@ -7,20 +7,35 @@ class Main extends Component {
         super();
         this.state = {
             data:[],
+            result:[]
         };
     }
+   
+    handleInputChange = (e) => {
+        let results = this.state.data.filter(r=>{
+            return (r.name.toLowerCase().indexOf(e.target.value.toLowerCase())!== -1 ? (
+                r
+            ):(null))
+        })
+        this.setState({
+            result: results
+        })
+        
+    }
+
     componentWillMount() {
         fetch("http://localhost:3000/user").then( resp => {
             return resp.json();
         }).then( obj => {
             this.setState({ 
-                data: obj
+                data: obj,
+                result:obj
             });
         });
     }
       
     render () {
-        const { data } = this.state;
+        const  data  = this.state.result;
         const datalist = data.length ? (
             data.map(e=>{
                 return (
@@ -29,7 +44,7 @@ class Main extends Component {
                             <Link
                             className="btn" 
                             to={'/'+ e.id}>
-                                DodajNaprawę
+                                Szczegóły
                             </Link>
                         </td>
                         <td>{e.name}</td>
@@ -41,6 +56,12 @@ class Main extends Component {
             ) : (<tr className="center"><td>Brak danych</td></tr>)
         return (
             <div className="container  flex">
+                <input
+                    placeholder="Szukaj..."
+                    ref={input => this.search = input}
+                    onChange={this.handleInputChange}
+                />
+                <p>{this.state.searchValue}</p>
                 <div>
                     <table className="highlight centered">
                         <thead>
