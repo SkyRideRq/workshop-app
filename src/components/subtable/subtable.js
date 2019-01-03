@@ -4,9 +4,7 @@ import React, { Component } from 'react';
 class Subtable extends Component {
     state = {
         data: [],
-        service:{
-
-        }
+        service:[]
     }
     handleSubmit = (e) => {
         e.preventDefault();

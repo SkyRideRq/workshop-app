@@ -57,18 +57,6 @@
       ]
     },
     {
-      "name": "zzz",
-      "model": "zzz",
-      "serialNumber": "zzz",
-      "id": "n5vVDZ_"
-    },
-    {
-      "name": "kljl",
-      "model": "dggdgdgdg",
-      "serialNumber": "gdgddggddg",
-      "id": "PYCZfS~"
-    },
-    {
       "name": "Piotr Słowiński",
       "model": "gfjjgfjfgfgjgfj",
       "serialNumber": "asdasd",
@@ -97,6 +85,36 @@
       "serialNumber": "f",
       "service": [],
       "id": "hszbrdrfv"
+    },
+    {
+      "name": "dhfdhdfhdf",
+      "model": "e",
+      "serialNumber": "e",
+      "service": [
+        {
+          "description": "kkk",
+          "parts": "ggg",
+          "cost": "6543",
+          "inputDate": "2018-12-28",
+          "outputDate": "2018-12-29",
+          "id": "0xwc1oc14"
+        }
+      ],
+      "id": "kflbtd9og"
+    },
+    {
+      "name": "Piotr Słowiński",
+      "model": "e",
+      "serialNumber": "asdasd",
+      "service": [],
+      "id": "jpkadxb5m"
+    },
+    {
+      "name": "Piotr Słowiński",
+      "model": "gfjjgfjfgfgjgfj",
+      "serialNumber": "f",
+      "service": [],
+      "id": "lcpjuosbm"
     }
   ]
 }
