@@ -18,6 +18,8 @@ Nothing special to see here :)
 
 - [x] fix subobject placement in json
 - [x] rethink data-add system
+- [x] add search
+- [x] add menu
 - [ ] ship it to electron(https://electronjs.org/) to make desktop app
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
