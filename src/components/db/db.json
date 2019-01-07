@@ -75,6 +75,22 @@
           "inputDate": "2019-01-23",
           "outputDate": "2019-01-26",
           "id": "7xxsj3rpg"
+        },
+        {
+          "description": "kkk",
+          "parts": "kkk",
+          "cost": "6576",
+          "inputDate": "5675-07-06",
+          "outputDate": "7567-05-06",
+          "id": "z7bfrzvhk"
+        },
+        {
+          "description": "kkk",
+          "parts": "kkk",
+          "cost": "6576",
+          "inputDate": "5675-07-06",
+          "outputDate": "7567-05-06",
+          "id": "4du59tn2o"
         }
       ],
       "serialNumber": "328058588-0",
@@ -7186,6 +7202,13 @@
       "service": [],
       "serialNumber": "546884770-1",
       "model": "Express 2500"
+    },
+    {
+      "name": "Kafel",
+      "model": "MS 440",
+      "serialNumber": "09438734953",
+      "service": [],
+      "id": "9vka95nbx"
     }
   ]
 }

@@ -35,7 +35,6 @@ class Subtable extends Component {
                 "display" :"none"
             },
         })
-        
     }
     handleChange = (event) => {
         event.preventDefault()
@@ -61,11 +60,12 @@ class Subtable extends Component {
             this.setState({
                 formStyle: {
                     "display" :"block",
-                    "position":"absolute",
+                    "position":"fixed",
                     "top":"2rem",
                     "left": "0",
                     "zIndex": "99999",
-                    "padding":"30px"
+                    "padding":"30px",
+                    "max-height":"100%"
                 }
             })
         ): (
@@ -75,9 +75,7 @@ class Subtable extends Component {
                 }
             })
         )
-        
     }
-    
     componentWillMount() {
         //console.log(this.props)
         let id = this.props.match.params.post_id;
@@ -90,7 +88,6 @@ class Subtable extends Component {
             });
         });
     }
-    
     render () {
         const data = this.state.data ? (
             <div>
@@ -116,6 +113,13 @@ class Subtable extends Component {
                 <button className='waves-effect waves-light btn' onClick={this.handleClick}>Dodaj nową naprawę</button>
                 <div className='modal' style={this.state.formStyle}>
                     <form  onSubmit={this.handleSubmit}>
+                        <div >
+                            <button className="btn" style={{
+                            "float":"right",
+                            "top" : "0",
+                            "z-index":"9999999"
+                            }}onClick={this.handleClick}>X</button>
+                        </div>
                         <h6>Dodaj nowy wpis</h6>
                         <div className="input-field">
                             <input
@@ -127,7 +131,7 @@ class Subtable extends Component {
                             />
                             <label htmlFor="description">Opis:</label>
                         </div>
-                        
+
                         <div className="input-field">
                             <input
                                 type="text"
@@ -176,8 +180,6 @@ class Subtable extends Component {
                         
                     </form>
                 </div>
-                    
-                
                 <table className="striped highlight">
                     <thead>
                         <tr>

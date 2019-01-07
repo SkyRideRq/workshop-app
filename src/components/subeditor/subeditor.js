@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class Editor extends Component {
+class SubEditor extends Component {
     constructor() {
         super();
         this.state = {
@@ -91,7 +91,7 @@ class Editor extends Component {
                                 id="name"
                                 required
                                 />
-                            <label htmlFor="name">Imię i nazwisko właściciela</label>
+                            <label htmlFor="name">Nazwisko Imię</label>
                         </div>
                         <div className="input-field">
                             <input
@@ -118,4 +118,4 @@ class Editor extends Component {
         )
     }
 }
-export default Editor;
+export default SubEditor;

@@ -66,7 +66,7 @@ class Main extends Component {
                         <thead>
                             <tr>
                                 <th></th>
-                                <th>Imie</th>
+                                <th>Imię i nazwisko</th>
                                 <th>Model</th>
                                 <th>Nr. Seryjny</th>
                             </tr>
