@@ -4,37 +4,37 @@ import React, { Component } from 'react';
 class Subtable extends Component {
     state = {
         data: [],
-        service:[]
-        
+        service:[],
+        formStyle:{
+            "display":"none"
+        }
     }
     handleSubmit = (e) => {
         e.preventDefault();
         let id = this.props.match.params.post_id;
-        const fields = Array.prototype.slice.call(e.target)
+        let fields = Array.prototype.slice.call(e.target)
             .filter(el => el.name)
             .reduce((form, el) => ({
                 ...form,
                 [el.name]: el.value,
             }), {});
         const randomID= Math.random().toString(36).substr(2, 9)
-        console.log(randomID)
         fields.id = randomID
-        console.log('fielsd ',fields)
-        const newfields = this.state.data.service.push(fields)
-        this.setState({
-            data: newfields
-        })  
-        console.log(newfields)
-        console.log("this state data ",this.state.data)
+        this.state.data.service.push(fields)
         const dataToSend =JSON.stringify(this.state.data)
-        fetch('http://localhost:3000/user/'+id+ '/', {
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
+            fetch('http://localhost:3000/user/'+id+ '/', {
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                method: 'PUT',
+                body: dataToSend
+            });
+        this.setState({
+            formStyle: {
+                "display" :"none"
             },
-            method: 'PUT',
-            body: dataToSend
-        });
+        })
         
     }
     handleChange = (event) => {
@@ -56,13 +56,32 @@ class Subtable extends Component {
         if (event.target.name === "outputDate")
             this.setState({outputDate: event.target.value});
     };
-
+    handleClick = () => {
+        this.state.formStyle.display === "none" ? (
+            this.setState({
+                formStyle: {
+                    "display" :"block",
+                    "position":"absolute",
+                    "top":"2rem",
+                    "left": "0",
+                    "zIndex": "99999",
+                    "padding":"30px"
+                }
+            })
+        ): (
+            this.setState({
+                formStyle: {
+                    "display" :"none"
+                }
+            })
+        )
+        
+    }
     
     componentWillMount() {
         //console.log(this.props)
         let id = this.props.match.params.post_id;
         fetch("http://localhost:3000/user/"+id).then( resp => {
-            
             return resp.json();
         }).then( obj => {
             this.setState({ 
@@ -70,11 +89,9 @@ class Subtable extends Component {
                 service:obj.service
             });
         });
-        console.log(this.state.service)
     }
     
     render () {
-        //console.log(this.state.data)
         const data = this.state.data ? (
             <div>
                 <h4 className="center">{this.state.data.name} {this.state.data.model} {this.state.data.serialNumber}</h4>
@@ -96,9 +113,9 @@ class Subtable extends Component {
         return (
             <div className="container center">
                 {data}
-                <a className='waves-effect waves-light btn modal-trigger' href="#modal1">Dodaj nową naprawę</a>
-                <div id="modal1" className="modal">
-                    <form  className="modal-content" onSubmit={this.handleSubmit}>
+                <button className='waves-effect waves-light btn' onClick={this.handleClick}>Dodaj nową naprawę</button>
+                <div className='modal' style={this.state.formStyle}>
+                    <form  onSubmit={this.handleSubmit}>
                         <h6>Dodaj nowy wpis</h6>
                         <div className="input-field">
                             <input
