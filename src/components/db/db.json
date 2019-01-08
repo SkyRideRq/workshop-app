@@ -1697,7 +1697,16 @@
     {
       "id": "6a57e9b5-7072-479d-a3d6-58af91e016dd",
       "name": "Blayne Langrish",
-      "service": [],
+      "service": [
+        {
+          "description": "sdgsd",
+          "parts": "sdgsdg",
+          "cost": "24342",
+          "inputDate": "0435-05-31",
+          "outputDate": "5345-03-04",
+          "id": "8h9brrz5p"
+        }
+      ],
       "serialNumber": "240150767-1",
       "model": "Frontier"
     },
@@ -7207,7 +7216,32 @@
       "name": "Kafel",
       "model": "MS 440",
       "serialNumber": "09438734953",
-      "service": [],
+      "service": [
+        {
+          "description": "kkk",
+          "parts": "ggg",
+          "cost": "45345",
+          "inputDate": "0056-06-05",
+          "outputDate": "0456-06-05",
+          "id": "75zzbunm7"
+        },
+        {
+          "description": "675",
+          "parts": "6576",
+          "cost": "86868",
+          "inputDate": "0008-06-07",
+          "outputDate": "0456-08-07",
+          "id": "pqn6sl7g6"
+        },
+        {
+          "description": "fh",
+          "parts": "fdgdf",
+          "cost": "4454",
+          "inputDate": "0534-03-04",
+          "outputDate": "0005-03-04",
+          "id": "edmzltnzi"
+        }
+      ],
       "id": "9vka95nbx"
     }
   ]

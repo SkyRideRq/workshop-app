@@ -56,6 +56,7 @@ class Subtable extends Component {
             this.setState({outputDate: event.target.value});
     };
     handleClick = () => {
+        console.log('PROPS ',this.props)
         this.state.formStyle.display === "none" ? (
             this.setState({
                 formStyle: {
@@ -65,7 +66,7 @@ class Subtable extends Component {
                     "left": "0",
                     "zIndex": "99999",
                     "padding":"30px",
-                    "max-height":"100%"
+                    "maxHeight":"100%"
                 }
             })
         ): (
@@ -76,8 +77,12 @@ class Subtable extends Component {
             })
         )
     }
+    handleClickEdit = (e) => {
+        console.log(e.refs)
+        
+    }
     componentWillMount() {
-        //console.log(this.props)
+        
         let id = this.props.match.params.post_id;
         fetch("http://localhost:3000/user/"+id).then( resp => {
             return resp.json();
@@ -95,14 +100,28 @@ class Subtable extends Component {
             </div>
         ) : (<h1 className="center">Wczytywanie...</h1>)
         const datalist = this.state.service.length ? (
-            this.state.service.map(e=>{
+            this.state.service.map((e, i)=>{
+                
                 return (
-                    <tr key={e.id}>
+                    <tr key={e.id} onClick={this.handleClickEdit}>
+                        <td>
+                            <button
+                                onClick={this.handleClickEdit}
+                                className='waves-effect waves-light btn'
+                            >Edytuj</button>
+                        </td>
+                        {/* <td>
+                            {
+                        (e.editable)?
+                            (<input type="text" className="form-control" id={e.id} defaultValue={e.contents} onChange={(e) => {
+                                this.props.handleChangeEvent(e.target.value, i)
+                            }} /> ): (<div onClick={onCellClick(i){}}>{el.contents}</div>)}</td> */}
                         <td>{e.description}</td>
                         <td>{e.parts}</td>
                         <td>{e.cost}</td>
                         <td>{e.inputDate}</td>
                         <td>{e.outputDate}</td>
+                        
                     </tr>
                 )
             })
@@ -117,7 +136,7 @@ class Subtable extends Component {
                             <button className="btn" style={{
                             "float":"right",
                             "top" : "0",
-                            "z-index":"9999999"
+                            "zIndex":"9999999"
                             }}onClick={this.handleClick}>X</button>
                         </div>
                         <h6>Dodaj nowy wpis</h6>
@@ -183,6 +202,7 @@ class Subtable extends Component {
                 <table className="striped highlight">
                     <thead>
                         <tr>
+                            <th></th>
                             <th>Opis</th>
                             <th>Cześci</th>
                             <th>Koszt</th>
