@@ -24,6 +24,13 @@ Nothing special to see here :)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+### ToRun:
+
+1. Download/clone repo
+2. Run `npm i` on repo folder
+3. Run `json-server db.json` in src/components/db/
+4. Run `npm start` on repo folder
+
 ## Available Scripts
 
 In the project directory, you can run:
